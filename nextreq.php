@@ -49,11 +49,17 @@ while($row = mysql_fetch_array($result))
  	//TODO:Write it to file
 
 
- 	//TODO:Update MYSQL so that the request will be marked as completed
-$sql="UPDATE RequestsR
-SET isdone = 1
-WHERE id = '.$id.'";
+ 	//Update MYSQL so that the request will be marked as completed
+	
+	//Prepare MYSQL request
+	$sql="UPDATE RequestsR
+	SET isdone = 1
+	WHERE id = '.$id.'";
 
+	//progress request
+	$result = mysql_query($sql,$con);
+
+	//We are ready to stop this script
  }else{
  	//if we are here , there is no request to be proceed ,just quit is okay.
  }
