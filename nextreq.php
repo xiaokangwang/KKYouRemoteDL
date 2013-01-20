@@ -11,6 +11,11 @@ $mysqlusr="";
 $mysqlpasswd="";
 $mysqldbname="";
 
+//Infomation for requst which is now being progress
+$id=-1;
+$useremail="";
+$linktodl="";
+
 //connect to MYSQL server
 $con = mysql_connect($mysqlserv,$mysqlusr,$mysqlpasswd);
 
@@ -25,5 +30,29 @@ AND  `linktodl` IS NOT NULL
 AND  `isdone` =0
 LIMIT 0 , 1";
 
+//progress request
+$result = mysql_query($sql,$con);
+
+//fetch infomation if there is somethings to do
+while($row = mysql_fetch_array($result))
+  {
+  	$id=$row["id"];
+	$useremail=$row["useremail"];
+	$linktodl=$row["linktodl"];
+  }
+
+ if($id!=-1){ //Knowing if theres a request to be proceed
+ 	
+ 	//if we are here, there is a request , and now we can write it to a file so that 
+ 	//It can be knowed by godownload.cpp
+
+ 	//TODO:Write it to file
+
+
+ 	//TODO:Update MYSQL so that the request will be marked as completed
+
+ }else{
+ 	//if we are here , there is no request to be proceed ,just quit is okay.
+ }
 
 ?>
