@@ -48,7 +48,6 @@ while($row = mysql_fetch_array($result))
 
  	//TODO:Write it to file
 
-
  	//Update MYSQL so that the request will be marked as completed
 	
 	//Prepare MYSQL request
