@@ -49,7 +49,6 @@ while($row = mysql_fetch_array($result))
 
 
 
- 	//TODO:Write it to file
 
  	//Open a file , req.txt is file to tell the godownload.cpp what is the next request
  	$file=fopen("req.txt","w");
@@ -63,6 +62,8 @@ while($row = mysql_fetch_array($result))
 
 
 
+
+
  	//Update MYSQL so that the request will be marked as completed
 	
 	//Prepare MYSQL request
@@ -72,6 +73,8 @@ while($row = mysql_fetch_array($result))
 
 	//progress request
 	$result = mysql_query($sql,$con);
+
+
 
 
 
