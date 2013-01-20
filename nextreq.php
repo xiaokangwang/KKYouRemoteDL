@@ -36,6 +36,7 @@ $result = mysql_query($sql,$con);
 //fetch infomation if there is somethings to do
 while($row = mysql_fetch_array($result))
   {
+  	//let the result from MYSQL become local infomation
   	$id=$row["id"];
 	$useremail=$row["useremail"];
 	$linktodl=$row["linktodl"];
@@ -46,7 +47,21 @@ while($row = mysql_fetch_array($result))
  	//if we are here, there is a request , and now we can write it to a file so that 
  	//It can be knowed by godownload.cpp
 
+
+
  	//TODO:Write it to file
+
+ 	//Open a file , req.txt is file to tell the godownload.cpp what is the next request
+ 	$file=fopen("req.txt","w");
+
+ 	//Write to file
+ 	fwrite($file,$useremail.PHP_EOL.$linktodl);
+	
+	//Close the file
+	fclose($file);
+
+
+
 
  	//Update MYSQL so that the request will be marked as completed
 	
@@ -58,7 +73,11 @@ while($row = mysql_fetch_array($result))
 	//progress request
 	$result = mysql_query($sql,$con);
 
+
+
 	//We are ready to stop this script
+
+
  }else{
  	//if we are here , there is no request to be proceed ,just quit is okay.
  }
