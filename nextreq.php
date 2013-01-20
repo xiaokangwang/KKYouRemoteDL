@@ -50,6 +50,9 @@ while($row = mysql_fetch_array($result))
 
 
  	//TODO:Update MYSQL so that the request will be marked as completed
+$sql="UPDATE RequestsR
+SET isdone = 1
+WHERE id = '.$id.'";
 
  }else{
  	//if we are here , there is no request to be proceed ,just quit is okay.
