@@ -13,8 +13,17 @@ $mysqldbname="";
 
 //connect to MYSQL server
 $con = mysql_connect($mysqlserv,$mysqlusr,$mysqlpasswd);
+
 //select database
 mysql_select_db($mysqldbname, $con);
+
+//write request
+$sql="SELECT * 
+FROM  `RequestsR` 
+WHERE  `useremail` IS NOT NULL 
+AND  `linktodl` IS NOT NULL 
+AND  `isdone` =0
+LIMIT 0 , 1";
 
 
 ?>

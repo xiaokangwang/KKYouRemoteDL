@@ -19,9 +19,9 @@ $con = mysql_connect($mysqlserv,$mysqlusr,$mysqlpasswd);
 mysql_select_db($mysqldbname, $con);
 
 //write request
-$sql="INSERT INTO RequestsR (useremail, linktodl)
+$sql="INSERT INTO RequestsR (useremail, linktodl,isdone)
 VALUES
-('"$useremail"','"$linktodl"')";
+('"$useremail"','"$linktodl"',0)";
 
 //progress request
 if (!mysql_query($sql,$con))
