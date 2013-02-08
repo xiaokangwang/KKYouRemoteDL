@@ -24,8 +24,9 @@ function checkreq($requestURL){
 function getnamefromout($out){
 
 	//get the name from out put
-	$remain=stristr($out,"[download] Destination:");
-	$urlws=stripos($remain,PHP_EOL);
+	$pathline="[download] Destination:";
+	$remain=stristr($out,$pathline);
+	$urlws=substr($remain,strlen($pathline),stripos($remain,PHP_EOL)-strlen($pathline));
 	$url=trim($urlws);
 
 	//now we can return it
