@@ -37,10 +37,13 @@ function getnamefromout($out){
 function proceeddownload($requestURL,&$return_var){
 	
 	//for safety, ensure it is not a bad
-	$requestedURL=escapeshellarg($requestedURL);
+	$requestURL=escapeshellarg($requestURL);
+
+	//make a name for download name
+	$cmdoutname=uniqid("out",true).".log";
 
 	//run command
-	$cmdoutput=system("./dl.sh '".$requestURL."'",$retval);
+	$cmdoutput=system("./dl.sh '".$requestURL."' ".$cmdoutname,$retval);
 
 	//tell user if success
 	$return_var=$retval;
@@ -50,8 +53,11 @@ function proceeddownload($requestURL,&$return_var){
 		return -1;
 	}
 
+	//read the infomation
+	$file=file_get_contents("cache/".$cmdoutname);
+
 	//if okay we will get the file name
-	$filename=getnamefromout($cmdoutput);
+	$filename=getnamefromout($file);
 
 	//now we are able to return
 	return $filename;

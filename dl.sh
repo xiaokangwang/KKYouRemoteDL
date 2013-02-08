@@ -1,3 +1,3 @@
 #/bin/sh
 cd cache
-../youtubedl/youtube-dl $1
+../youtubedl/youtube-dl $1 > $2
