@@ -22,7 +22,25 @@ if(!checkreq($requestedURL_org)){
 	die("REQ_NOT_ACCEPT");	
 }
 
+/*
+Download
+*/
+
 //run download and get file name
+$filename=proceeddownload($requestedURL_org,$retv);
+
+/*
+Prepare output
+*/
+
+$valouttext=retval2text($retv);
+
+if($retv!=0){
+	die($valouttext);
+}else{
+	//we are still here, so write a output
+	echo filename2out($filename);
+}
 
 
 ?>
