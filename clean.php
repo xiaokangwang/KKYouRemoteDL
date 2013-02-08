@@ -1,0 +1,3 @@
+<?php
+system("deletefiles.sh");
+?>
