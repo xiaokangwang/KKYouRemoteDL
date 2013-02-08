@@ -138,7 +138,7 @@ var locinid;
 var locoutid;
 
 kkdl_submit=function(){
-var wantedurl=$(locinid).val();
+var wantedurl=$("#urltodl").val();
 var wantedurlsub=Base64.encode(wantedurl);
 var htmlobj=$.ajax({url:"proceed.php",
 					async:true,
@@ -147,13 +147,11 @@ var htmlobj=$.ajax({url:"proceed.php",
 					type:"POST",
 					data: "urlb64="+wantedurlsub,
 					success:function(data){
-						$(locoutid).html=data;
+						$("#result").html=data;
 						}
 					});
 }
 
-kkdl_init=function(gobutton , inid ,outid  ){
-locinid=inid;
-locoutid=outid;
-$(gobutton).click(function(){kkdl_submit();});
+kkdl_init=function(){
+$("#subbtn").click(function(){kkdl_submit();});
 }
