@@ -16,9 +16,22 @@ function checkreq($requestURL){
 		return -1;
 	}
 
-	//if we still are here it is okay to return 0 means it is ok
+	//if we are still here it is okay to return 0 means it is ok
 	return 0;
 	}
+
+
+function getnamefromout($out){
+
+	//get the name from out put
+	$remain=stristr($out,"[download] Destination:");
+	$urlws=stripos($remain,PHP_EOL);
+	$url=trim($urlws);
+
+	//now we can return it
+	return $url;
+}
+
 
 function proceeddownload($requestURL,&$return_var){
 	
@@ -31,7 +44,17 @@ function proceeddownload($requestURL,&$return_var){
 	//tell user if success
 	$return_var=$retval;
 
-	
+	//check if return value means success
+	if($retval!=0){
+		return -1;
+	}
+
+	//if okay we will get the file name
+	$filename=getnamefromout($cmdoutput);
+
+	//now we are able to return
+	return $filename;
+
 
 }
 
