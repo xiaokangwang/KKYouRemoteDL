@@ -29,6 +29,15 @@ function getnamefromout($out){
 	$urlws=substr($remain,strlen($pathline),stripos($remain,PHP_EOL)-strlen($pathline));
 	$url=trim($urlws);
 
+	//if nothing we get check if file existed.
+	if($url==""){
+		$pathline="[download]";
+		$remain=stristr($out,$pathline);
+		$urlws=substr($remain,strlen($pathline),stripos($remain,PHP_EOL)-strlen("has already been downloaded"));
+		$url=trim($urlws);
+	}
+
+
 	//now we can return it
 	return $url;
 }
