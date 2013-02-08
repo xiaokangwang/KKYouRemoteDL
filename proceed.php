@@ -22,6 +22,7 @@ if(!checkreq($requestedURL_org)){
 	die("REQ_NOT_ACCEPT");	
 }
 
-//
+//run download and get file name
+
 
 ?>
