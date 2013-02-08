@@ -2,7 +2,27 @@
 /*
 library for the whole solution
 */
+function filename2out($filename){
+	$outtext="Finished!".PHP_EOL.
+	         "Link:".
+	         '<a href="'."cache/".$filename.'"'.">".
+	         $filename
+	         ."</a>";
+	return $outtext;
 
+
+}
+
+function retval2text($retval){
+	if($retval){
+	//NOT good
+	return "BAD_RETURN_VALUE:".$retval;
+	}
+	else{
+	//Good!
+	return "OK";
+	}
+}
 
 function checkreq($requestURL){
 
