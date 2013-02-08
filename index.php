@@ -11,12 +11,15 @@
 				<input class="input-xxlarge" id="urltodl" type="text" placeholder="URL" >
 				<button id="subbtn" class="btn btn-primary" type="button"><i class="icon-play"></i>Go!</button>
 			</div>
-		<div id="result">
+		<div id="result" class="well well-large">
 		</div>
+		<div class="footer">
+        <p>by Xiaokang Wang.V0.8</p>
+      </div>
 	</div>
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type="text/javascript" src="go.js"></script>
+	<script type="text/javascript" data-cfasync="false" src="jquery.js"></script>
+	<script type="text/javascript" data-cfasync="false" src="js/bootstrap.js"></script>
+	<script type="text/javascript" data-cfasync="false" src="go.js"  ></script>
 	<script type="text/javascript">
 		kkdl_init();
 	</script>

@@ -143,13 +143,20 @@ var wantedurlsub=Base64.encode(wantedurl);
 var htmlobj=$.ajax({url:"proceed.php",
 					async:true,
 					cache:false,
-					timeout:600,
+					timeout:60000,
 					type:"POST",
 					data: "urlb64="+wantedurlsub,
-					success:function(data){
-						$("#result").html=data;
+					success: function(datas){
+						$("#result").append("respond received at ");
+						$("#result").append(Date());
+						$("#result").append("<br />");
+						$("#result").append(datas);
+						$("#result").append("<br />");
+						console.log(datas);
 						}
 					});
+$("#result").append("Request Sent,please wait.........");
+$("#result").append("<br />");
 }
 
 kkdl_init=function(){

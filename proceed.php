@@ -18,7 +18,7 @@ $requestedURL_base64=$_POST["urlb64"];
 $requestedURL_org=base64_decode($requestedURL_base64);
 
 //check if it is a good one.
-if(!checkreq($requestedURL_org)){
+if(checkreq($requestedURL_org)){
 	die("REQ_NOT_ACCEPT");	
 }
 

@@ -53,7 +53,7 @@ function getnamefromout($out){
 	if($url==""){
 		$pathline="[download]";
 		$remain=stristr($out,$pathline);
-		$urlws=substr($remain,strlen($pathline),stripos($remain,PHP_EOL)-strlen("has already been downloaded"));
+		$urlws=substr($remain,strlen($pathline),stripos($remain,PHP_EOL)-strlen("has already been downloadedhas alread"));
 		$url=trim($urlws);
 	}
 
