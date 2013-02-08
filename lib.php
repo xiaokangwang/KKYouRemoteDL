@@ -39,7 +39,7 @@ function proceeddownload($requestURL,&$return_var){
 	$requestedURL=escapeshellarg($requestedURL);
 
 	//run command
-	$cmdoutput=system("dl.sh '".$requestURL."'",$retval);
+	$cmdoutput=system("./dl.sh '".$requestURL."'",$retval);
 
 	//tell user if success
 	$return_var=$retval;
