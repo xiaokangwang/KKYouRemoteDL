@@ -1,3 +1,3 @@
 <?php
-system("deletefiles.sh");
+system("./deletefiles.sh");
 ?>
