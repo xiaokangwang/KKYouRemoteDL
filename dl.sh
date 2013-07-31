@@ -1,4 +1,4 @@
 #/bin/sh
 cd cache
-../youtubedl/youtube-dl $1 > $2
+../youtubedl/youtube-dl --id -c -i --no-mtime $1 > $2
 exit $?
